@@ -282,7 +282,7 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
                 },
                 completion: {
                     self.StopAnimating()
-                    self.performSegueWithIdentifier("GotoTreatmentNotesEdit", sender: nil)
+                  //  self.performSegueWithIdentifier("GotoTreatmentNotesEdit", sender: self)
                     // A function to run in the foreground when the background thread is complete
             })
             
