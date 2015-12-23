@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YcK-W6-aOM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YcK-W6-aOM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -273,6 +273,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="RevealVC" id="vXZ-lx-hvc" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
@@ -296,7 +297,6 @@
                         <segue destination="mhT-rs-Jnz" kind="show" identifier="Open_Contradiction" customClass="SWRevealViewControllerSegueSetController" id="9xS-OL-3sc"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-640" y="-5549"/>
         </scene>
@@ -590,6 +590,11 @@
         <!--Menu Controller-->
         <scene sceneID="WvI-gM-KFV">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eHO-uu-C6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="gGL-Yg-g6J">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </mapView>
                 <tableViewController id="c8U-hf-vWv" customClass="MenuController" customModule="Soprono_Ice" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="haP-s8-5Sh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -842,11 +847,6 @@
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eHO-uu-C6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="gGL-Yg-g6J">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </mapView>
             </objects>
             <point key="canvasLocation" x="-3168" y="-4266"/>
         </scene>
@@ -2554,6 +2554,8 @@
         <!--SOPRANO ICE FORM-->
         <scene sceneID="EHJ-Ri-94t">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77p-1x-mh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6dw-8g-gXd"/>
                 <viewController id="Gev-IA-HCz" customClass="ClientViewController" customModule="Soprono_Ice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0be-lG-sOG"/>
@@ -2681,8 +2683,6 @@
                         <outlet property="txtSearch" destination="zQX-5M-vUz" id="cZV-7k-f2f"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="77p-1x-mh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="6dw-8g-gXd"/>
             </objects>
             <point key="canvasLocation" x="4083" y="-743"/>
         </scene>
@@ -2705,6 +2705,8 @@
         <!--SOPRANO ICE FORM-->
         <scene sceneID="DgB-oX-b2h">
             <objects>
+                <tapGestureRecognizer id="yxL-FY-xTb"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GBQ-Cj-vhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="x5n-bi-2kl" customClass="ManageUserViewController" customModule="Soprono_Ice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FVs-Yc-g1u"/>
@@ -2901,8 +2903,6 @@
                         <outlet property="txtUsername" destination="Emf-hn-iz6" id="F5m-Be-rHv"/>
                     </connections>
                 </viewController>
-                <tapGestureRecognizer id="yxL-FY-xTb"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GBQ-Cj-vhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3020" y="-826"/>
         </scene>
