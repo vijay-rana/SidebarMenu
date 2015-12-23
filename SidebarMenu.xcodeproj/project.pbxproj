@@ -107,7 +107,7 @@
 		62D7DB911BA9372300C56696 /* CautionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CautionsViewController.swift; sourceTree = "<group>"; };
 		62D7DB931BA97D1A00C56696 /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		62D7DB951BA998C200C56696 /* YPDrawSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPDrawSignatureView.swift; sourceTree = "<group>"; };
-		F47029F01A7F27DB00E30A3C /* Soprono Ice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Soprono Ice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F47029F01A7F27DB00E30A3C /* Soprano ICE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Soprano ICE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47029F41A7F27DB00E30A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47029F51A7F27DB00E30A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47029FA1A7F27DB00E30A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		F47029F11A7F27DB00E30A3C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F47029F01A7F27DB00E30A3C /* Soprono Ice.app */,
+				F47029F01A7F27DB00E30A3C /* Soprano ICE.app */,
 				F4702A051A7F27DC00E30A3C /* SidebarMenuTests.xctest */,
 			);
 			name = Products;
@@ -317,7 +317,7 @@
 			);
 			name = SidebarMenu;
 			productName = SidebarMenu;
-			productReference = F47029F01A7F27DB00E30A3C /* Soprono Ice.app */;
+			productReference = F47029F01A7F27DB00E30A3C /* Soprano ICE.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F4702A041A7F27DC00E30A3C /* SidebarMenuTests */ = {
@@ -581,7 +581,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SidebarMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Soprono Ice";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kindlebit.Soprono-Ice";
+				PRODUCT_NAME = "Soprano ICE";
 				PROVISIONING_PROFILE = "6231d457-6c67-4a5e-a28b-4f2121125cd8";
 				SWIFT_OBJC_BRIDGING_HEADER = "SidebarMenu/SidebarMenu-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -598,7 +599,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kindlebit Solutions Pvt. Ltd. (7UZQN3YCUQ)";
 				INFOPLIST_FILE = SidebarMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Soprono Ice";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kindlebit.Soprono-Ice";
+				PRODUCT_NAME = "Soprano ICE";
 				PROVISIONING_PROFILE = "6231d457-6c67-4a5e-a28b-4f2121125cd8";
 				SWIFT_OBJC_BRIDGING_HEADER = "SidebarMenu/SidebarMenu-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 2;
