@@ -18,6 +18,7 @@
 		6278FDD61BA6FBF5004413D3 /* GeneralMedicalQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6278FDD51BA6FBF5004413D3 /* GeneralMedicalQuestionsViewController.swift */; };
 		627D1B301BAFCAE800ED77E9 /* TherapistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627D1B2F1BAFCAE800ED77E9 /* TherapistViewController.swift */; };
 		627D1B321BB0300C00ED77E9 /* TreatmentNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627D1B311BB0300C00ED77E9 /* TreatmentNotesViewController.swift */; };
+		62AD9AC51C2981C1003E4CE8 /* SegueViewId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AD9AC41C2981C1003E4CE8 /* SegueViewId.swift */; settings = {ASSET_TAGS = (); }; };
 		62BD74CF1BB9703600F91C90 /* ManageUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BD74CE1BB9703600F91C90 /* ManageUserViewController.swift */; };
 		62C216121BA80CB400487AA1 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C216111BA80CB400487AA1 /* KeychainWrapper.m */; };
 		62C2980F1BB162ED00A3E2F8 /* TreatmentNoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C2980E1BB162ED00A3E2F8 /* TreatmentNoteDetailViewController.swift */; };
@@ -77,6 +78,7 @@
 		6278FDD51BA6FBF5004413D3 /* GeneralMedicalQuestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralMedicalQuestionsViewController.swift; sourceTree = "<group>"; };
 		627D1B2F1BAFCAE800ED77E9 /* TherapistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistViewController.swift; sourceTree = "<group>"; };
 		627D1B311BB0300C00ED77E9 /* TreatmentNotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatmentNotesViewController.swift; sourceTree = "<group>"; };
+		62AD9AC41C2981C1003E4CE8 /* SegueViewId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewId.swift; sourceTree = "<group>"; };
 		62BD74CE1BB9703600F91C90 /* ManageUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageUserViewController.swift; sourceTree = "<group>"; };
 		62C216101BA80CB400487AA1 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 		62C216111BA80CB400487AA1 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
@@ -107,7 +109,7 @@
 		62D7DB911BA9372300C56696 /* CautionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CautionsViewController.swift; sourceTree = "<group>"; };
 		62D7DB931BA97D1A00C56696 /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		62D7DB951BA998C200C56696 /* YPDrawSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPDrawSignatureView.swift; sourceTree = "<group>"; };
-		F47029F01A7F27DB00E30A3C /* Soprano ICE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Soprano ICE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F47029F01A7F27DB00E30A3C /* Soprono Ice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Soprono Ice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47029F41A7F27DB00E30A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47029F51A7F27DB00E30A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47029FA1A7F27DB00E30A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				62BD74CE1BB9703600F91C90 /* ManageUserViewController.swift */,
 				62CC0E761BBAB1A200AF0F20 /* main.swift */,
 				62CC0E781BBAB1F700AF0F20 /* FLApplication.swift */,
+				62AD9AC41C2981C1003E4CE8 /* SegueViewId.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -235,7 +238,7 @@
 		F47029F11A7F27DB00E30A3C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F47029F01A7F27DB00E30A3C /* Soprano ICE.app */,
+				F47029F01A7F27DB00E30A3C /* Soprono Ice.app */,
 				F4702A051A7F27DC00E30A3C /* SidebarMenuTests.xctest */,
 			);
 			name = Products;
@@ -317,7 +320,7 @@
 			);
 			name = SidebarMenu;
 			productName = SidebarMenu;
-			productReference = F47029F01A7F27DB00E30A3C /* Soprano ICE.app */;
+			productReference = F47029F01A7F27DB00E30A3C /* Soprono Ice.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F4702A041A7F27DC00E30A3C /* SidebarMenuTests */ = {
@@ -435,6 +438,7 @@
 				F47029F61A7F27DB00E30A3C /* AppDelegate.swift in Sources */,
 				62C55A0B1BA2974100D8DCDE /* DTO.swift in Sources */,
 				F491E74C1A7F4C630026528E /* NewsTableViewCell.swift in Sources */,
+				62AD9AC51C2981C1003E4CE8 /* SegueViewId.swift in Sources */,
 				626C44591BA198D600B40B80 /* ClientRequest.swift in Sources */,
 				62C216121BA80CB400487AA1 /* KeychainWrapper.m in Sources */,
 				626C44551BA188AD00B40B80 /* ContraindicationViewControlller.swift in Sources */,
@@ -528,7 +532,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "6231d457-6c67-4a5e-a28b-4f2121125cd8";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -566,7 +569,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "6231d457-6c67-4a5e-a28b-4f2121125cd8";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -581,9 +583,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SidebarMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kindlebit.Soprono-Ice";
-				PRODUCT_NAME = "Soprano ICE";
-				PROVISIONING_PROFILE = "6231d457-6c67-4a5e-a28b-4f2121125cd8";
+				PRODUCT_NAME = "Soprono Ice";
+				PROVISIONING_PROFILE = "473a25f9-1669-4e8d-9699-bfb646e01543";
 				SWIFT_OBJC_BRIDGING_HEADER = "SidebarMenu/SidebarMenu-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -596,12 +597,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kindlebit Solutions Pvt. Ltd. (7UZQN3YCUQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SidebarMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kindlebit.Soprono-Ice";
-				PRODUCT_NAME = "Soprano ICE";
-				PROVISIONING_PROFILE = "6231d457-6c67-4a5e-a28b-4f2121125cd8";
+				PRODUCT_NAME = "Soprono Ice";
+				PROVISIONING_PROFILE = "473a25f9-1669-4e8d-9699-bfb646e01543";
 				SWIFT_OBJC_BRIDGING_HEADER = "SidebarMenu/SidebarMenu-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -611,8 +611,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Kindlebit Solutions Pvt. Ltd. (7UZQN3YCUQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kindlebit Solutions Pvt. Ltd. (7UZQN3YCUQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -624,7 +624,7 @@
 				INFOPLIST_FILE = SidebarMenuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "473a25f9-1669-4e8d-9699-bfb646e01543";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SidebarMenu.app/SidebarMenu";
 			};
 			name = Debug;
@@ -633,8 +633,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Kindlebit Solutions Pvt. Ltd. (7UZQN3YCUQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kindlebit Solutions Pvt. Ltd. (7UZQN3YCUQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -642,7 +642,7 @@
 				INFOPLIST_FILE = SidebarMenuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "473a25f9-1669-4e8d-9699-bfb646e01543";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SidebarMenu.app/SidebarMenu";
 			};
 			name = Release;

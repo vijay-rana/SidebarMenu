@@ -27,6 +27,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "SWRevealViewController.h"
+#import "SidebarMenu-Bridging-Header.h"
+#import "Soprono_Ice-Swift.h"
+
 
 
 #pragma mark - StatusBar Helper Function
@@ -191,6 +194,7 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
 
 - (void)layoutSubviews
 {
+    
     if ( _disableLayout ) return;
 
     CGRect bounds = self.bounds;
@@ -1657,13 +1661,15 @@ const int FrontViewPositionNone = 0xff;
         //Try each segue separately so it doesn't break prematurely if either Rear or Right views are not used.
         @try
         {
+          
             [self performSegueWithIdentifier:SWSegueRearIdentifier sender:nil];
         }
         @catch(NSException *exception) {}
         
         @try
         {
-            [self performSegueWithIdentifier:SWSegueFrontIdentifier sender:nil];
+            NSLog(@"%@",[SegueViewId segieIdString]);
+            [self performSegueWithIdentifier:[SegueViewId segieIdString] sender:nil];
         }
         @catch(NSException *exception) {}
         
@@ -1795,7 +1801,7 @@ const int FrontViewPositionNone = 0xff;
 #pragma mark - SWRevealViewControllerSegueSetController segue identifiers
 
 NSString * const SWSegueRearIdentifier = @"sw_rear";
-NSString * const SWSegueFrontIdentifier = @"sw_front";
+NSString  * SWSegueFrontIdentifier = @"Open_Client";
 NSString * const SWSegueRightIdentifier = @"sw_right";
 
 
@@ -1806,11 +1812,12 @@ NSString * const SWSegueRightIdentifier = @"sw_right";
 - (void)perform
 {
     SWRevealControllerOperation operation = SWRevealControllerOperationNone;
-    
+    SWSegueFrontIdentifier = [SegueViewId segieIdString];
     NSString *identifier = self.identifier;
     SWRevealViewController *rvc = self.sourceViewController;
     UIViewController *dvc = self.destinationViewController;
     
+    NSLog(@"%@%@",identifier,SWSegueFrontIdentifier);
     if ( [identifier isEqualToString:SWSegueFrontIdentifier] )
         operation = SWRevealControllerOperationReplaceFrontController;
     

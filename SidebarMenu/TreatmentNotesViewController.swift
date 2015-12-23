@@ -96,8 +96,6 @@ class TreatmentNotesViewController: UIViewController, UITableViewDelegate, UITab
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-    
-        
         ClientDTO.note_id = 0
         btnView.hidden = true
         HideButton()
@@ -135,7 +133,9 @@ class TreatmentNotesViewController: UIViewController, UITableViewDelegate, UITab
     
     func BindData()
     {
-        lblNotesAddedCount.text = String(Collection.Static_listTreatmentNotesDTO.count)        
+        
+        
+        
     }
     
 //    func getDataFromUrl(urL:NSURL, completion: ((data: NSData?) -> Void)) {

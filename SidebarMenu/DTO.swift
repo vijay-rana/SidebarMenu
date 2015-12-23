@@ -240,4 +240,5 @@ enum SegueId {
   case  Open_SkinDetail
     case GotoTreatmentNotesEdit
     case Open_ManageUser
+    case sw_front
 }

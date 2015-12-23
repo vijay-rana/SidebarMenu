@@ -64,7 +64,6 @@ class MenuController: UITableViewController {
             ResetQuestion()
             ResetTherapistDTO_Static()
             ResetAggrement()
-            Collection.Static_listTreatmentNotesDTO.removeAll()
             
             
 //            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

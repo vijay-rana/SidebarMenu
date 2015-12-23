@@ -31,22 +31,8 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
     //@IBOutlet weak var btnAdd: UIButton!
     
     override func viewDidLoad() {
-        if(Segue.IsJustUnlocked)
-        {
-            Segue.IsJustUnlocked = false
-            if(Segue.SegueId.characters.count > 0)
-            {
-                return
-            }
-        }
-        else
-        {
-            Segue.SegueId = ""
-            Segue.IsJustUnlocked = false
-        }
-        
         super.viewDidLoad()
-        
+    
         AssignDelegate()
         HideButton()
         if self.revealViewController() != nil {
@@ -65,10 +51,11 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
     
     
     override func viewWillAppear(animated: Bool) {
-        if(Segue.SegueId.characters.count > 0)
-        {
-          self.performSegueWithIdentifier(Segue.SegueId, sender: nil)
-        }
+//        if(Segue.SegueId.characters.count > 0)
+//        {
+//          self.performSegueWithIdentifier(Segue.SegueId, sender: nil)
+//        }
+        Segue.SegueId = "sw_front"
     }
     
     
@@ -289,7 +276,6 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func btnEdit_TouchDown(sender: AnyObject) {
         if(ClientDTO_Static.clientid > 0)
         {
-            Collection.Static_listTreatmentNotesDTO.removeAll()
             backgroundThread(background: {
                 self.StartAnimating()
                  self.LoadALlData()
