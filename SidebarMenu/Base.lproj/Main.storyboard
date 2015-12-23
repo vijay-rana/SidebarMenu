@@ -273,7 +273,6 @@
         <!--Reveal View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="RevealVC" id="vXZ-lx-hvc" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
@@ -297,8 +296,9 @@
                         <segue destination="mhT-rs-Jnz" kind="show" identifier="Open_Contradiction" customClass="SWRevealViewControllerSegueSetController" id="9xS-OL-3sc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-640" y="-5549"/>
+            <point key="canvasLocation" x="-1296" y="-5341"/>
         </scene>
         <!--SOPRANO ICE FORM-->
         <scene sceneID="c8E-Nx-QT7">
@@ -590,11 +590,6 @@
         <!--Menu Controller-->
         <scene sceneID="WvI-gM-KFV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eHO-uu-C6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="gGL-Yg-g6J">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </mapView>
                 <tableViewController id="c8U-hf-vWv" customClass="MenuController" customModule="Soprono_Ice" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="haP-s8-5Sh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -847,6 +842,11 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eHO-uu-C6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="gGL-Yg-g6J">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </mapView>
             </objects>
             <point key="canvasLocation" x="-3168" y="-4266"/>
         </scene>
@@ -1491,7 +1491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCk-jB-P9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1931" y="-725"/>
+            <point key="canvasLocation" x="1915" y="-357"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wuU-Mr-I0G">
@@ -1834,7 +1834,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQK-Jv-Dgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="-2535"/>
+            <point key="canvasLocation" x="205" y="-2583"/>
         </scene>
         <!--SOPRANO ICE FORM-->
         <scene sceneID="hXX-HR-ibf">
@@ -2142,7 +2142,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bc-qM-8Dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="aof-SK-4xD"/>
             </objects>
-            <point key="canvasLocation" x="969" y="-801"/>
+            <point key="canvasLocation" x="705" y="-617"/>
         </scene>
         <!--SOPRANO ICE FORM-->
         <scene sceneID="IpY-6a-6Oa">
@@ -2307,7 +2307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IG-wd-y7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="2420"/>
+            <point key="canvasLocation" x="639" y="2340"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vH5-4R-49a">
@@ -2324,7 +2324,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoI-Cv-m8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="776"/>
+            <point key="canvasLocation" x="721" y="728"/>
         </scene>
         <!--SOPRANO ICE FORM-->
         <scene sceneID="qWm-nK-2PF">
@@ -2554,8 +2554,6 @@
         <!--SOPRANO ICE FORM-->
         <scene sceneID="EHJ-Ri-94t">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="77p-1x-mh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="6dw-8g-gXd"/>
                 <viewController id="Gev-IA-HCz" customClass="ClientViewController" customModule="Soprono_Ice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0be-lG-sOG"/>
@@ -2598,6 +2596,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnEdit_TouchDown:" destination="Gev-IA-HCz" eventType="touchDown" id="hcY-TO-mZw"/>
+                                    <segue destination="F9a-XM-mFi" kind="show" identifier="GotoTreatmentNotesEdit" id="2Hs-4i-5zf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWf-E9-t6p">
@@ -2683,8 +2682,10 @@
                         <outlet property="txtSearch" destination="zQX-5M-vUz" id="cZV-7k-f2f"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77p-1x-mh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6dw-8g-gXd"/>
             </objects>
-            <point key="canvasLocation" x="4083" y="-743"/>
+            <point key="canvasLocation" x="3878" y="-819"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wyY-MQ-cBg">
@@ -2705,8 +2706,6 @@
         <!--SOPRANO ICE FORM-->
         <scene sceneID="DgB-oX-b2h">
             <objects>
-                <tapGestureRecognizer id="yxL-FY-xTb"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GBQ-Cj-vhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="x5n-bi-2kl" customClass="ManageUserViewController" customModule="Soprono_Ice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FVs-Yc-g1u"/>
@@ -2903,8 +2902,10 @@
                         <outlet property="txtUsername" destination="Emf-hn-iz6" id="F5m-Be-rHv"/>
                     </connections>
                 </viewController>
+                <tapGestureRecognizer id="yxL-FY-xTb"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GBQ-Cj-vhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3020" y="-826"/>
+            <point key="canvasLocation" x="2812" y="-146"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UtP-zp-P1I">
@@ -3141,22 +3142,22 @@
         <image name="warning.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Be7-hT-0nM"/>
-        <segue reference="saX-ZJ-KJA"/>
+        <segue reference="4j0-V7-9ko"/>
+        <segue reference="gaa-db-WyW"/>
+        <segue reference="cCz-gK-Rc6"/>
+        <segue reference="sYX-K6-KEy"/>
+        <segue reference="tfs-eR-8aa"/>
+        <segue reference="tSs-PU-06N"/>
         <segue reference="swa-1W-v1C"/>
         <segue reference="9xS-OL-3sc"/>
-        <segue reference="Yxa-0p-4Vb"/>
-        <segue reference="TJz-8v-hSp"/>
         <segue reference="p7Y-3M-Tqr"/>
+        <segue reference="TJz-8v-hSp"/>
         <segue reference="3wM-W6-BOx"/>
-        <segue reference="5Kf-OX-gat"/>
-        <segue reference="tSs-PU-06N"/>
+        <segue reference="Yxa-0p-4Vb"/>
         <segue reference="xvQ-32-Tio"/>
-        <segue reference="inN-c3-SFY"/>
+        <segue reference="5Kf-OX-gat"/>
         <segue reference="SPP-H0-T0G"/>
-        <segue reference="t8S-JK-hPf"/>
-        <segue reference="sYX-K6-KEy"/>
+        <segue reference="2Hs-4i-5zf"/>
         <segue reference="kAf-S3-QUp"/>
-        <segue reference="fmJ-gX-15n"/>
     </inferredMetricsTieBreakers>
 </document>
