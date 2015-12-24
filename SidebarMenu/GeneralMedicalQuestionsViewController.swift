@@ -142,7 +142,7 @@ class GeneralMedicalQuestionsViewController: UIViewController, UITextFieldDelega
         var result = "0"
         switch i {
         case 1:
-            print(swt1.on)
+           
              Question.S1  = swt1.on
         case 2:
             Question.S2  = swt2.on
@@ -237,7 +237,7 @@ class GeneralMedicalQuestionsViewController: UIViewController, UITextFieldDelega
     {
         switch i {
         case 1:
-            print(Question.S1)
+           
             swt1.on = Question.S1
         case 2:
             swt2.on = Question.S2

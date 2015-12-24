@@ -14,47 +14,6 @@ class ClientRequest: NSObject {
     var data = NSMutableData()    
     
     
-     
-    
-//    func ServerToLocalDB(query:NSString)
-//    {
-//        let nilObj: AnyObject? = nil
-//        let MyKeychainWrapper = KeychainWrapper()
-//      
-//        
-//        if let path = NSBundle.mainBundle().pathForResource("settings", ofType: "plist") {
-//            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
-//                var GlobalURL: String =  (dict["GlobalURL"]! as! String) + (query as String) as String as! String
-//                var url = NSURL(string: GlobalURL)
-//                var request = NSURLRequest(URL: url!) // Creating Http Request
-//                
-//                
-//                var response:AutoreleasingUnsafeMutablePointer<NSURLResponse?> = nil;
-//                var error: AutoreleasingUnsafeMutablePointer<NSErrorPointer> = nil;
-//                // Sending Synchronous request using NSURLConnection
-//                var responseData = NSURLConnection.sendSynchronousRequest(request,returningResponse: response, error:nil) as NSData?
-//                
-//                
-//                
-//                if error != nil
-//                {
-//                    // You can handle error response here
-//                }
-//                else
-//                {
-//                    //println(responseData)
-//                    //Converting data to String
-//                    // var responseStr:NSString = NSString(data:responseData!, encoding:NSUTF8StringEncoding)!
-//                    var jsonString: NSString = NSString(data: responseData!, encoding: NSUTF8StringEncoding)!
-//                    //println(jsonString)
-//                    insertMasterData(query as String,data: jsonString as String)
-//                }
-//            }
-//        }   
-//        
-//    }
-
-    
     
     
     
@@ -67,7 +26,7 @@ class ClientRequest: NSObject {
             if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
                 let GlobalURL: String =  (dict["GlobalURL"]! as! String) + (query as String) as String as String
                 
-                //println(GlobalURL)
+               
                 
                 let url = NSURL(string: GlobalURL)
                 let request = NSURLRequest(URL: url!) // Creating Http Request
@@ -115,16 +74,11 @@ class ClientRequest: NSObject {
     
     if(!IJReachability.isConnectedToNetwork())
     {
-//        insertCLIENT(query, data: data)
-//        ClientDTO.client_id = 999999999
+
         self.Error("Internet connection lost!!")
         return
     }
-//    else if(ClientDTO.client_id == 999999999 )
-//    {
-//        ClientDTO.client_id = 0
-//    }
-    
+
     
     if let path = NSBundle.mainBundle().pathForResource("settings", ofType: "plist") {
         if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
@@ -242,109 +196,5 @@ class ClientRequest: NSObject {
     }
     
     
-//    func insertCLIENT(query:String, data:String)
-//    {
-//        let documentsFolder = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-//        let path = documentsFolder.stringByAppendingPathComponent("Ice.sqlite")
-//        
-//        println(path)
-//        
-//        let database = FMDatabase(path: path)
-//        
-//        if !database.open() {
-//            println("Unable to open database")
-//            return
-//        }
-//      
-//        if !database.executeUpdate("insert into CLIENT (query, data) values (?, ?)", withArgumentsInArray: [query, data]) {
-//            println("insert 2 table failed: \(database.lastErrorMessage())")
-//        }
-//        
-//        database.close()
-//    }
-//  
-//    
-//    func insertMasterData(query:String, data:String)
-//    {
-//        let documentsFolder = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-//        let path = documentsFolder.stringByAppendingPathComponent("Ice.sqlite")
-//        
-//        println(path)
-//        
-//        let database = FMDatabase(path: path)
-//        
-//        if !database.open() {
-//            println("Unable to open database")
-//            return
-//        }
-//        
-//        if !database.executeUpdate("insert into MasterData (query, data) values (?, ?)", withArgumentsInArray: [query, data]) {
-//            println("insert 2 table failed: \(database.lastErrorMessage())")
-//        }
-//        
-//        database.close()
-//    }
-    
-   
-//    func ValidateMasterData() -> Bool
-//    {
-//        let documentsFolder = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-//        let path = documentsFolder.stringByAppendingPathComponent("Ice.sqlite")
-//        
-//        println(path)
-//        
-//        let database = FMDatabase(path: path)
-//        
-//        if !database.open() {
-//            println("Unable to open database")
-//            return false
-//        }
-//        
-//        if let rs = database.executeQuery("select ID, query, data from MasterData", withArgumentsInArray: nil) {
-//            while rs.next() {
-//                return true
-//            }
-//        } else {
-//            println("select failed: \(database.lastErrorMessage())")
-//            return false
-//        }
-//        
-//        database.close()
-//        return false
-//       
-//    }
-    
-   
-//    func GetMasterTableData(query:String) -> NSData?
-//    {
-//        
-//        let nilObj: NSData? = nil
-//        let documentsFolder = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-//        let path = documentsFolder.stringByAppendingPathComponent("Ice.sqlite")
-//        println(path)
-//        let database = FMDatabase(path: path)
-//        if !database.open() {
-//            println("Unable to open database")
-//            return nilObj
-//        }
-//        
-//        if let rs = database.executeQuery("select ID, query, data from MasterData where query = '"  + query + "'", withArgumentsInArray: nil) {
-//            while rs.next() {
-//                println(rs.stringForColumn("data"))
-//                let data = (rs.stringForColumn("data") as NSString).dataUsingEncoding(NSUTF8StringEncoding)
-//                return data
-//            }
-//        } else {
-//            println("select failed: \(database.lastErrorMessage())")
-//            return nilObj!
-//        }
-//        
-//        database.close()
-//        return nilObj
-//        
-//    }
-    
-    
-   
     
 }

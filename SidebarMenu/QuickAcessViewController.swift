@@ -102,18 +102,7 @@ class QuickAcessViewController: UIViewController, UITextFieldDelegate, UIScrollV
     
     
     
-//    @IBAction func btnLogin_TouchDown(sender: AnyObject) {
-//        println(User.QuickAccess)
-//        if(txtPassword.text == String(stringInterpolationSegment: MyKeychainWrapper.myObjectForKey("labl")))
-//        {
-//            performSegueWithIdentifier("GotoRevealController", sender: nil)
-//            return
-//        }
-//        else
-//        {
-//            Error("Wrong quick access key")
-//        }
-//    }
+
     
    
     @IBAction func btnSignout_TouchDown(sender: AnyObject) {
@@ -182,7 +171,7 @@ class QuickAcessViewController: UIViewController, UITextFieldDelegate, UIScrollV
     func DigitEntered(digit: String)
     {
         Digits = Digits + digit
-        print(Digits)
+        
         
         lblStars.text = ""
         

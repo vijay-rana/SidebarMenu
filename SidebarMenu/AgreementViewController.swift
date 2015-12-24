@@ -257,9 +257,7 @@ class AgreementViewController: UIViewController, UITextFieldDelegate, UIScrollVi
             }
             var imageData = UIImagePNGRepresentation(viewSignature.getSignature())
             var imageDataTherapist = UIImagePNGRepresentation(viewTherapistSignature.getSignature())
-            
-            print(imageData!.length)
-            print(imageDataTherapist!.length)
+        
             if(imageData!.length < 1200 || imageDataTherapist!.length < 1200)
             {
                 Error("Both signatures are required!")
@@ -299,8 +297,6 @@ class AgreementViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         var imageData = UIImagePNGRepresentation(viewSignature.getSignature())
         var imageDataTherapist = UIImagePNGRepresentation(viewTherapistSignature.getSignature())
         
-        print(imageData!.length)
-        print(imageDataTherapist!.length)
         if(imageData!.length < 1200 || imageDataTherapist!.length < 1200)
         {
             Error("Both signatures are required!")

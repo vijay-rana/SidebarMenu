@@ -133,7 +133,7 @@ class ManageUserViewController: UIViewController, UITextFieldDelegate, UIScrollV
     
    
     @IBAction func btnSave_TouchDown(sender: AnyObject) {
-         print(String(stringInterpolationSegment: MyKeychainWrapper.myObjectForKey("svce")))
+        
         if(String(stringInterpolationSegment: MyKeychainWrapper.myObjectForKey("svce")) == "2")
         {
             if(txtPassword.text != txtRetypepassword.text)
@@ -150,7 +150,7 @@ class ManageUserViewController: UIViewController, UITextFieldDelegate, UIScrollV
             var Data1 =  "&username=" + txtUsername.text! + "&password=" +  txtPassword.text!
             var Data2  = "&roll_id=" + RoleID + "&quick_access=" +  txtAccessKey.text!
             var Data = Data1 +  Data2
-            print(Data)
+            
             var client = ClientRequest()
             client.PostDataAsyc("/SaveUsers.php", data: Data)
             self.Success("Record added successfully, List will update in few seconds.")
@@ -276,7 +276,7 @@ class ManageUserViewController: UIViewController, UITextFieldDelegate, UIScrollV
             HideButton()
             
         }
-        print("You selected cell #\(indexPath.row)!")
+       
     }
     
     
@@ -322,7 +322,7 @@ class ManageUserViewController: UIViewController, UITextFieldDelegate, UIScrollV
     }
     
     @IBAction func btnDelete_TouchDown(sender: AnyObject) {
-        print(String(stringInterpolationSegment: MyKeychainWrapper.myObjectForKey("svce")))
+       
         if(String(stringInterpolationSegment: MyKeychainWrapper.myObjectForKey("svce")) == "2")
         {
             if(user_id > 0)

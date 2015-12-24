@@ -216,10 +216,10 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
             try CallBySelectedRow(indexPath.row)
             
         } catch {
-            print("Something went wrong!")
+            //print("Something went wrong!")
         }
         
-        print("You selected cell #\(indexPath.row)!")
+        
     }
     
    
@@ -279,7 +279,6 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
         if(ClientDTO_Static.clientid > 0)
         {
             tap.enabled = false
-            print("Edit button clicked")
             backgroundThread(background: {
                 self.StartAnimating()
                  self.LoadALlData()
@@ -486,8 +485,6 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
     {
         let client = ClientRequest()
         
-         print(String(ClientDTO_Static.clientid))
-        
         let anyObj: AnyObject? =  client.SynchronousRequest("/ClientAgreeRecord.php?clientid=" + String(ClientDTO_Static.clientid))
         if(anyObj != nil && anyObj is Array<AnyObject>)
         {
@@ -553,7 +550,7 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
         if(anyObj != nil && anyObj is Array<AnyObject>)
         {
             
-            print(anyObj?.count)
+           
             
             for json in anyObj as! Array<AnyObject>{
                 

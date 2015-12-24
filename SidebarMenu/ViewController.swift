@@ -212,7 +212,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
             ClientDTO_Static.newsletter_status =  swtNewsletters.on
             ClientDTO_Static.email =    txtEmail.text!
             
-            print(HearAboutID)
+            
             
             if(HearAboutID != "")
             {
@@ -229,34 +229,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
     }
     
     
-//    @IBAction func btnNext_TouchDown(sender: AnyObject) {
-//        StartAnimating()
-//        if(ValidateData())
-//        {
-//            print(txtLastName.text!)
-//            
-//            let NewslettersStatus =  swtNewsletters.on ? "1": "0"
-//            let Data1 =  "&first_name=" + txtFirstName.text! + "&last_name="
-//            let Data2 =   txtLastName.text! + "&dob=" + strDOB + "&telephone=" +  txtTelephone.text!
-//            let Data3 = "&newsletter_status=" + NewslettersStatus + "&email="
-//            let Data4 =  txtEmail.text! + "&kin_name=" + ""
-//            let Data5 = "&kin_telephone=" +  "" + "&hear_frm=" + HearAboutID
-//            var id = ""
-//            if(ClientDTO.client_id > 0)
-//            {
-//                id = "&clientid=" + String(ClientDTO.client_id)
-//            }
-//            let Data = Data1 +  Data2 + Data3 +  Data4 + Data5  + id
-//            
-//            
-//            let client = ClientRequest()
-//            client.PostDataAsyc("/clientDetail_save.php", data: Data)
-//            StopAnimating()
-//            performSegueWithIdentifier("GotoGeneralMedicalQuestions", sender: nil)
-//            return
-//        }
-//    }
-
     
     
     func SaveClientDetail()
@@ -434,29 +406,16 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
             print("create table failed: \(database.lastErrorMessage())")
         }
         
-       
-        
-//        if !database.executeUpdate("create table test(x text, y text, z text)", withArgumentsInArray: nil) {
-//            println("create table failed: \(database.lastErrorMessage())")
-//        }
-//        
-//        if !database.executeUpdate("insert into CLIENT (query, data) values (?, ?)", withArgumentsInArray: ["query1", "data1"]) {
-//            println("insert 1 table failed: \(database.lastErrorMessage())")
-//        }
-//
-//        if !database.executeUpdate("insert into CLIENT (query, data) values (?, ?)", withArgumentsInArray: ["query2", "data2"]) {
-//            println("insert 2 table failed: \(database.lastErrorMessage())")
-//        }
         
         if let rs = database.executeQuery("select ID, query, data from CLIENT", withArgumentsInArray: nil) {
             while rs.next() {
                 let x = rs.stringForColumn("ID")
                 let y = rs.stringForColumn("query")
                 let z = rs.stringForColumn("data")
-                print("x = \(x); y = \(y); z = \(z)")
+                //print("x = \(x); y = \(y); z = \(z)")
             }
         } else {
-            print("select failed: \(database.lastErrorMessage())")
+            //print("select failed: \(database.lastErrorMessage())")
         }
         
         database.close()

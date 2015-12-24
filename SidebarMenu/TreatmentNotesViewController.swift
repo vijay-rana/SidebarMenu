@@ -296,7 +296,7 @@ class TreatmentNotesViewController: UIViewController, UITableViewDelegate, UITab
                     dicLstTherapistArea[(json["therapist_type"] as AnyObject? as? String) ?? ""] = (json["therapist_area_id"] as AnyObject? as? String) ?? ""
                 }// for
                 
-                print(listTherapistArea.joinWithSeparator("\n"))
+              
             }
             Collection.Static_listTherapistArea = listTherapistArea
             Collection.Static_dicLstTherapistArea = dicLstTherapistArea
@@ -418,8 +418,7 @@ class TreatmentNotesViewController: UIViewController, UITableViewDelegate, UITab
             cell.lblFE.font = UIFont.systemFontOfSize(f)
             if(self.items[indexPath.row - 1].therapist_id > 0 )
                 {
-                    print(self.items[indexPath.row - 1].therapist_id)
-                    print(listTherapist.count)
+                   
                     
                     if(listTherapist.count > self.items[indexPath.row - 1].therapist_id)
                     {
@@ -447,7 +446,7 @@ class TreatmentNotesViewController: UIViewController, UITableViewDelegate, UITab
             print("Something went wrong!")
         }
         
-        print("You selected cell #\(indexPath.row)!")
+        
     }
     
     
@@ -476,7 +475,7 @@ class TreatmentNotesViewController: UIViewController, UITableViewDelegate, UITab
                 txtEnergy = self.items[row - 1].energy
                 
                 
-                print(self.items[row - 1].therapist_id)
+            
                 TherapistAreaId = String(self.items[row - 1].area_treated_id)
                 
                 TherapistId = String(self.items[row - 1].therapist_id)
@@ -861,7 +860,6 @@ class TreatmentNotesViewController: UIViewController, UITableViewDelegate, UITab
             
             var therapistImageData = UIImagePNGRepresentation(therapistSignature.getSignature())
             
-            print(TherapistAreaId)
             
            
             

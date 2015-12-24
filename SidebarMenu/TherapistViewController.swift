@@ -111,21 +111,7 @@ func saveClient(notification: NSNotification){
 
     func BindData()
     {
-        print("TherapistObj.area1: " + String(TherapistObj.area1))
-         print("TherapistObj.area2: " + String(TherapistObj.area2))
-         print("TherapistObj.area3: " + String(TherapistObj.area3))
-         print("TherapistObj.area4: " + String(TherapistObj.area4))
-         print("TherapistObj.value1: " + String(TherapistObj.value1))
-         print("TherapistObj.value2: " + String(TherapistObj.value2))
-         print("TherapistObj.value3: " + String(TherapistObj.value3))
-         print("TherapistObj.value4: " + String(TherapistObj.value4))
-        
-        
-         print("TherapistObj.skin_type1: " + String(TherapistObj.skin_type1))
-         print("TherapistObj.skin_type2: " + String(TherapistObj.skin_type2))
-         print("TherapistObj.hair_color: " + String(TherapistObj.hair_color))
-        
-        
+                
         
         pickerArea1.selectRow(TherapistObj.area1, inComponent: 0, animated: true)
         pickerArea2.selectRow(TherapistObj.area2, inComponent: 0, animated: true)
@@ -734,7 +720,7 @@ func saveClient(notification: NSNotification){
             
             let Data = Data1 +  Data2 + Data3 + Data4 + Data5 + id
             
-            print(Data)
+        
             
             let client = ClientRequest()
             client.PostDataAsyc("/SaveTherapistEntry.php", data: Data)
