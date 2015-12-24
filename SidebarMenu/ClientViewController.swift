@@ -88,11 +88,11 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
         tvClient.reloadData()
     }
     
-    
+    var tap = UITapGestureRecognizer()
+   
     func TapGesture()
     {
-        //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        tap = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
@@ -222,6 +222,8 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
         print("You selected cell #\(indexPath.row)!")
     }
     
+   
+    
     
     func CallBySelectedRow(row: Int)
     {
@@ -276,13 +278,15 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func btnEdit_TouchDown(sender: AnyObject) {
         if(ClientDTO_Static.clientid > 0)
         {
+            tap.enabled = false
+            print("Edit button clicked")
             backgroundThread(background: {
                 self.StartAnimating()
                  self.LoadALlData()
                 },
                 completion: {
                     self.StopAnimating()
-                  //  self.performSegueWithIdentifier("GotoTreatmentNotesEdit", sender: self)
+                    //self.performSegueWithIdentifier("GotoTreatmentNotesEdit", sender: self)
                     // A function to run in the foreground when the background thread is complete
             })
             
@@ -330,6 +334,10 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func btnDelete_TouchDown(sender: AnyObject) {
         
+        if(ClientDTO_Static.clientid > 0)
+        {
+            tap.enabled = false
+        }
         let deleteAlert = UIAlertController(title: "Delete", message: "This record will be permanently deleted?", preferredStyle: UIAlertControllerStyle.Alert)
         deleteAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction) in
             let Data = "&clientid=" + String(ClientDTO_Static.clientid)
@@ -462,10 +470,6 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
         {
             var i: Int = 1
             for json in anyObj as! Array<AnyObject>{
-                if(i == 11)
-                {
-                    break
-                }
                 let comment = (json["comments"] as AnyObject? as? String) ?? ""
                 let yesno = toBool((json["quest_status"] as AnyObject? as? String)! ?? "")
                 SetQuestionStatus(i, status: yesno!)
@@ -474,6 +478,7 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
                 
             }// for
         }
+        
     }
     
     
