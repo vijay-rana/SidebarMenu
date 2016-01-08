@@ -290,12 +290,12 @@ class AgreementViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         
         if(strDate == "")
         {
-            var dateFormatter = NSDateFormatter()
+            let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "dd-MM-yyyy"
             strDate = dateFormatter.stringFromDate(NSDate())
         }
-        var imageData = UIImagePNGRepresentation(viewSignature.getSignature())
-        var imageDataTherapist = UIImagePNGRepresentation(viewTherapistSignature.getSignature())
+        let imageData = UIImagePNGRepresentation(viewSignature.getSignature())
+        let imageDataTherapist = UIImagePNGRepresentation(viewTherapistSignature.getSignature())
         
         if(imageData!.length < 1200 || imageDataTherapist!.length < 1200)
         {

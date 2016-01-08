@@ -87,6 +87,7 @@ class TherapistViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         GetTherapistValueList()
         GetTherapistAreaRecordList()
         GetColorsList()
+        ActivityIndicator()
         GetSkinTypeValuesList()
         //if(ClientDTO.client_id > 0)
         //{
@@ -216,7 +217,7 @@ func saveClient(notification: NSNotification){
    
     
     @IBAction func btnNext_TouchDown(sender: AnyObject) {
-       
+       StartAnimating()
         SetStaticValues()
         SaveClientDetails()
         performSegueWithIdentifier("GotoTreatmentNotes", sender: nil)
@@ -611,13 +612,14 @@ func saveClient(notification: NSNotification){
             }// for
         }
     }
-    var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+    var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
     func ActivityIndicator()
     {
-        indicator.frame =  CGRectMake(305, 362, 100, 100)
-        indicator.center = self.view.center
+        indicator.frame =  CGRectMake(self.view.frame.size.width/2 - 50,self.view.frame.size.height/2 - 50, 100, 100)
+        indicator.layer.cornerRadius = 10.0
+        indicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         self.view.addSubview(indicator)
-        indicator.bringSubviewToFront(self.view)
+       
     }
     func StartAnimating()
     {

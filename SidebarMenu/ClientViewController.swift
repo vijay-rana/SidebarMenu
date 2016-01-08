@@ -59,13 +59,14 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
-    var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+    var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
     func ActivityIndicator()
     {
-        indicator.frame =  CGRectMake(305, 362, 100, 100)
-        indicator.center = self.view.center
+        indicator.frame =  CGRectMake(self.view.frame.size.width / 2 - 50, self.view.frame.size.height / 2 - 50, 100, 100)
+        indicator.layer.cornerRadius = 10.0
+        indicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         self.view.addSubview(indicator)
-        indicator.bringSubviewToFront(self.view)
+        
     }
     func StartAnimating()
     {
@@ -85,7 +86,7 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
         ClientDTO_Static.clientid = 0
         items.removeAll(keepCapacity: false)
         GetClientList()
-        tvClient.reloadData()
+        
     }
     
     var tap = UITapGestureRecognizer()
@@ -243,34 +244,46 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
     
     func GetClientList()
     {
+        StartAnimating()
         if(String(stringInterpolationSegment: MyKeychainWrapper.myObjectForKey("svce")) == "3")
         {
             return
         }
         
         let client = ClientRequest()
-        let anyObj: AnyObject? =  client.SynchronousRequest("/getClient_record.php")
-        if(anyObj != nil && anyObj is Array<AnyObject>)
-        {
-            for json in anyObj as! Array<AnyObject>{
-                var b:ClientDetailDTO = ClientDetailDTO()
-                b.first_name  = (json["first_name"] as AnyObject? as? String) ?? ""
-                b.last_name = (json["last_name"] as AnyObject? as? String)! ?? ""
-                b.telephone = (json["telephone"] as AnyObject? as? String)! ?? ""
-                b.dob = (json["dob"] as AnyObject? as? String)! ?? ""
-                let id = (json["clientid"] as AnyObject? as? String)! ?? ""
-                if(id != "")
+        var anyObj: AnyObject? = ClientRequest()
+        backgroundThread(0.0, background: {
+              anyObj =  client.SynchronousRequest("/getClient_record.php")
+            }, completion: {
+                if(anyObj != nil && anyObj is Array<AnyObject>)
                 {
-                    b.clientid = Int(id)!
-                }                
-                b.email = (json["email"] as AnyObject? as? String)! ?? ""
-                b.kin_name = (json["kin_name"] as AnyObject? as? String)! ?? ""
-                b.kin_telephone = (json["kin_telephone"] as AnyObject? as? String)! ?? ""                
-                items.append(b)
-            }// for
-        }
-        StaticItems = items
-    }
+                    for json in anyObj as! Array<AnyObject>{
+                        var b:ClientDetailDTO = ClientDetailDTO()
+                        b.first_name  = (json["first_name"] as AnyObject? as? String) ?? ""
+                        b.last_name = (json["last_name"] as AnyObject? as? String)! ?? ""
+                        b.telephone = (json["telephone"] as AnyObject? as? String)! ?? ""
+                        b.dob = (json["dob"] as AnyObject? as? String)! ?? ""
+                        let id = (json["clientid"] as AnyObject? as? String)! ?? ""
+                        if(id != "")
+                        {
+                            b.clientid = Int(id)!
+                        }
+                        b.email = (json["email"] as AnyObject? as? String)! ?? ""
+                        b.kin_name = (json["kin_name"] as AnyObject? as? String)! ?? ""
+                        b.kin_telephone = (json["kin_telephone"] as AnyObject? as? String)! ?? ""
+                        self.items.append(b)
+                        self.tvClient.reloadData()
+                        self.StopAnimating()
+                    }// for
+                }
+                self.StaticItems = self.items
+
+        
+        })
+        
+        
+        
+           }
     
   
     
@@ -278,9 +291,10 @@ class ClientViewController:  UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func btnEdit_TouchDown(sender: AnyObject) {
         if(ClientDTO_Static.clientid > 0)
         {
+            self.StartAnimating()
             tap.enabled = false
             backgroundThread(background: {
-                self.StartAnimating()
+                
                  self.LoadALlData()
                 },
                 completion: {

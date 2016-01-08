@@ -32,24 +32,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
     }
     
     
-    var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+    var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
     func ActivityIndicator()
     {
-        indicator.frame =  CGRectMake(305, 362, 100, 100)
-        indicator.center = self.view.center
+        indicator.frame =  CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/2 - 50, 100, 100)
+        indicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha:0.7)
+        indicator.layer.cornerRadius = 10
         self.view.addSubview(indicator)
-        indicator.bringSubviewToFront(self.view)
+    
     }
     func StartAnimating()
     {
         indicator.startAnimating()
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-
+    
     }
     func StopAnimating()
     {
         indicator.stopAnimating()
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+       
     }
        
     
@@ -75,60 +75,104 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
             return
         }        
         
+     StartAnimating()
+     let client = ClientRequest()
+        
+     var anyObj: AnyObject? = ClientRequest()
      
-     var client = ClientRequest()
-       
+        backgroundThread(0.0, background: {
+            
+             anyObj =  client.SynchronousRequest("/login.php?username=" + self.txtUserId.text!+"&password=" +  self.txtPassword.text!)
+            
+            
+            }, completion: {
         
-        
-     let anyObj: AnyObject? =  client.SynchronousRequest("/login.php?username=" + txtUserId.text!+"&password=" +  txtPassword.text!)
-     
-        
-        if(anyObj != nil)
-        {
-            list = self.parseJsonUserDTO(anyObj!)
-            var count  = list.count
-            if(count > 0)
+            if(anyObj != nil)
             {
-                MyKeychainWrapper.mySetObject(txtPassword.text, forKey:kSecValueData)
-                MyKeychainWrapper.writeToKeychain()
-                
-                MyKeychainWrapper.mySetObject(txtUserId.text, forKey:kSecAttrAccount)
-                MyKeychainWrapper.writeToKeychain()
-                
-                MyKeychainWrapper.mySetObject(list[0].roll_id, forKey:kSecAttrService)
-                MyKeychainWrapper.writeToKeychain()
-                
-                MyKeychainWrapper.mySetObject(list[0].quick_access, forKey:kSecAttrLabel)
-                MyKeychainWrapper.writeToKeychain()
-                User.QuickAccess = list[0].quick_access
-                
-                
-//                var client = ClientRequest()
-//                if(!client.ValidateMasterData())
-//                {
-//                    CreateMasterTableData()
-//                }
-                
-//                if(list[0].roll_id == 1)
-//                {
-//                    Warning("You can only view the data, Your changes will not be saved.")
-//                }
-                
-               
-                performSegueWithIdentifier("GotoRevealController", sender: nil)
+                self.list = self.parseJsonUserDTO(anyObj!)
+                let count  = self.list.count
+                if(count > 0)
+                {
+                    self.MyKeychainWrapper.mySetObject(self.txtPassword.text, forKey:kSecValueData)
+                    self.MyKeychainWrapper.writeToKeychain()
+                    
+                    self.MyKeychainWrapper.mySetObject(self.txtUserId.text, forKey:kSecAttrAccount)
+                    self.MyKeychainWrapper.writeToKeychain()
+                    
+                    self.MyKeychainWrapper.mySetObject(self.list[0].roll_id, forKey:kSecAttrService)
+                    self.MyKeychainWrapper.writeToKeychain()
+                    
+                    self.MyKeychainWrapper.mySetObject(self.list[0].quick_access, forKey:kSecAttrLabel)
+                    self.MyKeychainWrapper.writeToKeychain()
+                    User.QuickAccess = self.list[0].quick_access
+                   self.StopAnimating()
+                    self.performSegueWithIdentifier("GotoRevealController", sender: nil)
+                    
+                }
+                else
+                {
+                    self.Error("Username/Password is not correct")
+                    self.StopAnimating()
+                    return
+                }
             }
             else
             {
-                Error("Username/Password is not correct")
+                self.Error("Some technical error accured, Please try after some time.")
                 return
             }
-        }
-        else
-        {
-           Error("Some technical error accured, Please try after some time.")
-            return
-        }
+
         
+        })
+        
+//        if(anyObj != nil)
+//        {
+//            list = self.parseJsonUserDTO(anyObj!)
+//            let count  = list.count
+//            if(count > 0)
+//            {
+//                MyKeychainWrapper.mySetObject(txtPassword.text, forKey:kSecValueData)
+//                MyKeychainWrapper.writeToKeychain()
+//                
+//                MyKeychainWrapper.mySetObject(txtUserId.text, forKey:kSecAttrAccount)
+//                MyKeychainWrapper.writeToKeychain()
+//                
+//                MyKeychainWrapper.mySetObject(list[0].roll_id, forKey:kSecAttrService)
+//                MyKeychainWrapper.writeToKeychain()
+//                
+//                MyKeychainWrapper.mySetObject(list[0].quick_access, forKey:kSecAttrLabel)
+//                MyKeychainWrapper.writeToKeychain()
+//                User.QuickAccess = list[0].quick_access
+//                
+//                
+////                var client = ClientRequest()
+////                if(!client.ValidateMasterData())
+////                {
+////                    CreateMasterTableData()
+////                }
+//                
+////                if(list[0].roll_id == 1)
+////                {
+////                    Warning("You can only view the data, Your changes will not be saved.")
+////                }
+//                
+//               
+//                performSegueWithIdentifier("GotoRevealController", sender: nil)
+//                
+//            }
+//            else
+//            {
+//                Error("Username/Password is not correct")
+//                StopAnimating()
+//                return
+//            }
+//        }
+//        else
+//        {
+//           Error("Some technical error accured, Please try after some time.")
+//            return
+//        }
+//        
     
         
     }
@@ -233,6 +277,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         return list
         
     }//func
+    
+    
+    
+    //method for multi threading  -----------
+    
+    func backgroundThread(delay: Double = 0.0, background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
+        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+            if(background != nil){ background!(); }
+            
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
+            dispatch_after(popTime, dispatch_get_main_queue()) {
+                if(completion != nil){ completion!(); }
+            }
+        }
+    }
     
     
     
